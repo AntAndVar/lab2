@@ -1,4 +1,4 @@
-package com.example.mcalc;
+package ca.yorku.eecs.mcalc;
 
 
 
@@ -27,4 +27,3 @@ public class MortgageModel {
         System.out.println(myModel.computePayment());
     }
 }
-
