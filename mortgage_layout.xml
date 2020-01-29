@@ -1,72 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Entryform">
 
     <TextView
+        android:id="@+id/plable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Principle (In Dollars)"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/plable"/>
+        android:text="Principle (In Dollars)" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/pbox"
-        android:layout_below="@+id/plable"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Amortization (In Years)"
-        android:id="@+id/aLable"
-        android:layout_below="@+id/pbox"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/aBox"
-        android:layout_below="@+id/aLable"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Interest (As An Annual Percent)"
-        android:id="@+id/iLable"
-        android:layout_below="@+id/aBox"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/iBox"
-        android:layout_below="@+id/iLable"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        />
+        android:text=""
+        android:layout_below="@+id/plable" />
+
+    <TextView
+        android:id="@+id/aLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pbox"
+        android:text="Amortization (In Years)" />
+
+    <EditText
+        android:id="@+id/aBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/aLable" />
+
+    <TextView
+        android:id="@+id/iLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/aBox"
+        android:text="Interest (As An Annual Percent)" />
+
+    <EditText
+        android:id="@+id/iBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iLable" />
 
     <Button
+        android:id="@+id/calcButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MONTHLY PAYMENT"
-        android:id="@+id/calcButton"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="pressedButton"/>
+        android:layout_centerVertical="true"
+        android:onClick="pressedButton"
+        android:text="MONTHLY PAYMENT"/>
+
 
     <TextView
         android:id="@+id/result"
@@ -74,8 +75,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="179dp"
+        android:layout_marginBottom="99dp"
         android:text=""
         android:textColor="@android:color/holo_red_light"
         android:textSize="25sp" />
+
 </RelativeLayout>
