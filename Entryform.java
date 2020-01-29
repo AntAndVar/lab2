@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.EditText;
 
+import ca.yorku.eecs.mcalc.R;
+
 public class Entryform extends AppCompatActivity
 {
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
