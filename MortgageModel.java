@@ -1,28 +1,29 @@
 package ca.yorku.eecs.mcalc;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.EditText;
-
-import ca.yorku.eecs.mcalc.R;
-
-public class Entryform extends AppCompatActivity
-{
 
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.mortgage_layout);
+public class MortgageModel {
+    private double p;
+    private int n;
+    private double r;
+    public MortgageModel (String a, String b, String c) {
+        p = Double.parseDouble(a);
+        n = Integer.parseInt(b) * 12;
+        r = (Double.parseDouble(c) / 12) / 100;
+
     }
-    public void pressedButton(View v) {
+    public String computePayment() {
+        double base = (1+r);
+        double numerator = r*p;
+        double denominator = 1 - Math.pow(base, -n);
+        double output = numerator / denominator;
+        return String.format("$%,.2f", output);
+    }
+    public static void main(String[] args) {
+        MortgageModel myModel = new MortgageModel("700000", "20", "4.50");
+        System.out.println(myModel.computePayment());
 
-        String p = ((EditText) findViewById(R.id.pbox)).getText().toString();
-        String r = ((EditText) findViewById(R.id.iBox)).getText().toString();
-        String n = ((EditText) findViewById(R.id.aBox)).getText().toString();
-        MortgageModel model = new MortgageModel(p, n, r);
-        String result = model.computePayment();
-        ((TextView) findViewById(R.id.result)).setText(result);
+        myModel = new MortgageModel("300000", "20", "4.5");
+        System.out.println(myModel.computePayment());
     }
 }
